@@ -50,49 +50,6 @@ supabase_admin: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 security = HTTPBearer()
 
-def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
-    """
-    Validates the Supabase JWT token.
-    Returns the user object if valid, raises 401 otherwise.
-    """
-    token = credentials.credentials
-    try:
-        # Verify token with Supabase Auth
-        # data = supabase_admin.auth.get_user(token) # Check if this is the right way for admin to verify user token
-        # Actually client libraries usually handle this by passing the token in the header to a new client instance
-        
-        # We need a client that acts as the user
-        client = create_client(SUPABASE_URL, SUPABASE_KEY, options={'headers': {'Authorization': f'Bearer {token}'}})
-        user = client.auth.get_user()
-        
-        if not user or not user.user:
-             raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Invalid authentication credentials",
-                headers={"WWW-Authenticate": "Bearer"},
-            )
-        return user.user
-    except Exception as e:
-        logger.error(f"Auth error: {e}")
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Invalid authentication credentials",
-            headers={"WWW-Authenticate": "Bearer"},
-        )
-
-def get_orchestrator(user = Depends(get_current_user)):
-    # Initialize Orchestrator with a user-specific storage instance
-    # We need to recreate the client with the user's token so RLS works
-    # However, in get_current_user we already created a client. 
-    # Let's optimize: pass the token or client?
-    # get_current_user returns User object.
-    
-    # We need to access the token again to create the client for storage
-    # FastAPI doesn't easily let us get the token *value* from the user object dependency unless we return it too.
-    # Let's adjust get_current_user logic or just re-extract from request?
-    pass
-
-# Adjusted dependency to return both user and authenticated client
 @app.get("/")
 async def root():
     return {
@@ -102,18 +59,21 @@ async def root():
     }
 
 def get_auth_context(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    """
+    Validates the Supabase JWT token and returns a context with user and authenticated client.
+    """
     token = credentials.credentials
     try:
         # Create client representing the user
         client = create_client(SUPABASE_URL, SUPABASE_KEY)
-        client.auth.set_session(access_token=token, refresh_token=token) # refresh_token might not be needed if we don't refresh
-        # Alternatively, just set headers
-        client.postgrest.headers.update({'Authorization': f'Bearer {token}'}) # This is often how supabase-py works for RLS
+        client.auth.set_session(access_token=token, refresh_token=token)
+        # Ensure Postgrest headers carry the auth token for RLS
+        client.postgrest.headers.update({'Authorization': f'Bearer {token}'})
         
         # Verify via get_user
         user_response = client.auth.get_user(token)
         if not user_response or not user_response.user:
-             raise HTTPException(status_code=401, detail="Invalid token")
+             raise HTTPException(status_code=401, detail="Invalid auth token")
              
         return {"user": user_response.user, "client": client}
     except Exception as e:
@@ -152,16 +112,6 @@ async def get_module(module_id: str, context: dict = Depends(get_auth_context)):
         raise HTTPException(status_code=404, detail="Module not found")
     return module
 
-@app.post("/api/sessions")
-async def create_session(module_id: str = Header(..., alias="X-Module-Id"), context: dict = Depends(get_auth_context)):
-    # Note: Header approach is one way, or body. The frontend hooks might expect params.
-    # checking hooks: useCreateSession() usually takes module_id.
-    # Let's support body for better practice
-    pass
-
-# Refactoring create_session to take body usually preferred, but let's check what hooks expect.
-# "useCreateSession()" implies it interacts with an endpoint.
-# I'll support a simple body {"module_id": "..."}
 class CreateSessionRequest(BaseModel):
     module_id: str
 
