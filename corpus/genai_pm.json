@@ -1,0 +1,29 @@
+{
+  "docs": [
+    {"url": "https://perplexity.ai/blog/agentic-ai", "title": "Agentic AI"},
+    {"url": "https://lilianweng.github.io/posts/2023-06-23-agent/", "title": "LLM Powered Autonomous Agents"},
+    {"url": "https://www.promptingguide.ai/techniques/tot", "title": "Tree of Thoughts"},
+    {"url": "https://platform.openai.com/docs/guides/prompt-engineering", "title": "OpenAI Prompt Engineering Guide"},
+    {"url": "https://www.deeplearning.ai/short-courses/chatgp-prompt-engineering-for-developers/", "title": "ChatGPT Prompt Engineering for Developers"},
+    {"url": "https://arxiv.org/abs/2303.11366", "title": "Reflexion: Language Agents with Verbal Reinforcement Learning"},
+    {"url": "https://www.pinecone.io/learn/series/rag/retrieval-augmented-generation/", "title": "What is RAG?"},
+    {"url": "https://python.langchain.com/docs/get_started/introduction", "title": "LangChain Introduction"},
+    {"url": "https://docs.llamaindex.ai/en/stable/", "title": "LlamaIndex Documentation"},
+    {"url": "https://huggingface.co/blog/hf-bitsandbytes-integration", "title": "Quantization with bitsandbytes"},
+    {"url": "https://jalammar.github.io/illustrated-transformer/", "title": "The Illustrated Transformer"},
+    {"url": "https://news.ycombinator.com/item?id=37750805", "title": "Show HN: GPT-4 Vision"},
+    {"url": "https://simonwillison.net/2023/Aug/3/large-language-models-are-having-their-stable-diffusion-moment/", "title": "LLMs are having their Stable Diffusion moment"},
+    {"url": "https://karpathy.ai/zero-to-hero.html", "title": "Andrej Karpathy: Neural Networks: Zero to Hero"},
+    {"url": "https://openai.com/research/gpt-4", "title": "GPT-4 Technical Report"},
+    {"url": "https://www.anthropic.com/index/claude-2", "title": "Model Card and Evaluations for Claude 2"},
+    {"url": "https://ai.google.dev/gemini-api/docs/models/gemini", "title": "Gemini Models Documentation"},
+    {"url": "https://github.com/microsoft/autogen", "title": "Microsoft AutoGen"},
+    {"url": "https://crewai.com/", "title": "CrewAI Agents"},
+    {"url": "https://temporal.io/blog/building-reliable-ai-agents", "title": "Building Reliable AI Agents with Temporal"},
+    {"url": "https://blog.langchain.dev/openais-bet-on-a-cognitive-architecture/", "title": "OpenAI's Bet on a Cognitive Architecture"},
+    {"url": "https://www.sequoiacap.com/article/generative-ai-act-two/", "title": "Generative AI's Act Two"},
+    {"url": "https://stratechery.com/2023/ai-and-the-big-five/", "title": "AI and the Big Five"},
+    {"url": "https://a16z.com/who-owns-the-generative-ai-platform/", "title": "Who Owns the Generative AI Platform?"},
+    {"url": "https://lexfridman.com/sam-altman-2/", "title": "Sam Altman: OpenAI, GPT-5, and the Future of AI | Lex Fridman Podcast"}
+  ]
+}

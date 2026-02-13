@@ -1,0 +1,71 @@
+{
+  "corpus_urls": [
+    "https://perplexity.ai/blog/agentic-ai",
+    "https://lilianweng.github.io/posts/2023-06-23-agent/",
+    "https://www.promptingguide.ai/techniques/tot",
+    "https://platform.openai.com/docs/guides/prompt-engineering",
+    "https://www.deeplearning.ai/short-courses/chatgp-prompt-engineering-for-developers/",
+    "https://arxiv.org/abs/2303.11366",
+    "https://www.pinecone.io/learn/series/rag/retrieval-augmented-generation/",
+    "https://python.langchain.com/docs/get_started/introduction",
+    "https://docs.llamaindex.ai/en/stable/",
+    "https://huggingface.co/blog/hf-bitsandbytes-integration",
+    "https://jalammar.github.io/illustrated-transformer/",
+    "https://news.ycombinator.com/item?id=37750805",
+    "https://simonwillison.net/2023/Aug/3/large-language-models-are-having-their-stable-diffusion-moment/",
+    "https://karpathy.ai/zero-to-hero.html",
+    "https://openai.com/research/gpt-4",
+    "https://www.anthropic.com/index/claude-2",
+    "https://ai.google.dev/gemini-api/docs/models/gemini",
+    "https://github.com/microsoft/autogen",
+    "https://crewai.com/",
+    "https://temporal.io/blog/building-reliable-ai-agents",
+    "https://blog.langchain.dev/openais-bet-on-a-cognitive-architecture/",
+    "https://www.sequoiacap.com/article/generative-ai-act-two/",
+    "https://stratechery.com/2023/ai-and-the-big-five/",
+    "https://a16z.com/who-owns-the-generative-ai-platform/",
+    "https://lexfridman.com/sam-altman-2/"
+  ],
+  "profile": {
+    "domain": "genai_pm",
+    "goals": "Master GenAI for Product Management",
+    "weeks": 3,
+    "hours_week": 10
+  },
+  "state": "ingested",
+  "user_resources": [
+    {
+      "url": "https://www.youtube.com/watch?v=BsWxPI9UM4c&t=5826s",
+      "title": "https://www.youtube.com/watch?v=BsWxPI9UM4c&t=5826s",
+      "type": "user"
+    }
+  ],
+  "final_corpus_urls": [
+    "https://lexfridman.com/sam-altman-2/",
+    "https://crewai.com/",
+    "https://perplexity.ai/blog/agentic-ai",
+    "https://lilianweng.github.io/posts/2023-06-23-agent/",
+    "https://github.com/microsoft/autogen",
+    "https://platform.openai.com/docs/guides/prompt-engineering",
+    "https://huggingface.co/blog/hf-bitsandbytes-integration",
+    "https://news.ycombinator.com/item?id=37750805",
+    "https://www.sequoiacap.com/article/generative-ai-act-two/",
+    "https://stratechery.com/2023/ai-and-the-big-five/",
+    "https://arxiv.org/abs/2303.11366",
+    "https://a16z.com/who-owns-the-generative-ai-platform/",
+    "https://openai.com/research/gpt-4",
+    "https://docs.llamaindex.ai/en/stable/",
+    "https://www.deeplearning.ai/short-courses/chatgp-prompt-engineering-for-developers/",
+    "https://www.pinecone.io/learn/series/rag/retrieval-augmented-generation/",
+    "https://simonwillison.net/2023/Aug/3/large-language-models-are-having-their-stable-diffusion-moment/",
+    "https://ai.google.dev/gemini-api/docs/models/gemini",
+    "https://temporal.io/blog/building-reliable-ai-agents",
+    "https://www.youtube.com/watch?v=BsWxPI9UM4c&t=5826s",
+    "https://karpathy.ai/zero-to-hero.html",
+    "https://www.promptingguide.ai/techniques/tot",
+    "https://blog.langchain.dev/openais-bet-on-a-cognitive-architecture/",
+    "https://www.anthropic.com/index/claude-2",
+    "https://python.langchain.com/docs/get_started/introduction",
+    "https://jalammar.github.io/illustrated-transformer/"
+  ]
+}
