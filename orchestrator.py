@@ -1,7 +1,7 @@
 import asyncio
 from typing import List, Dict, Any, Optional
 from agents import material_agent, roadmap_agent, coach_agent, fetch_transcript
-from storage import Storage
+from storage_v2 import Storage
 import logging
 
 logger = logging.getLogger(__name__)
